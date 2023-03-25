@@ -27,4 +27,4 @@ function inflationCalculator() {
    newElement.className = 'new-value';
    newElement.innerText = `Danasnjih ${money}€ vrijedi isto kao ${worth}€ za ${years} godina`;
    document.querySelector('.container').appendChild(newElement);
-}
+} 
