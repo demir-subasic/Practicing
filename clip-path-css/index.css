@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #e7e1e1;
+    overflow: hidden;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+li a {
+    display: block;
+    color: white;
+    padding: 20px 100px;
+    text-decoration: none;
+    clip-path: polygon(50% 0%, 50% 0%, 80% 100%, 20% 100%);
+    transition: background-color 0.5s;
+    background-color: rgb(85, 85, 224);
+}
+
+li a:hover {
+    background-color: #000274;
+    cursor: pointer;
+}
