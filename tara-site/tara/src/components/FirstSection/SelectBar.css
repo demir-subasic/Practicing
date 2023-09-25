@@ -1,0 +1,85 @@
+.select-bar {
+    background: rgba(18, 112, 82, 1);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    height: 15vh;
+    width: 60vw;
+    border: none;
+}
+.select-bar p {
+    color: rgba(238, 201, 104, 1);
+}
+.lokacija {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lokacija p {
+    font-size: 20px;
+    margin-bottom: 4%;
+}
+.lokacija select {
+    height: 30px;
+    width: 80%;
+}
+.smestaj {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.smestaj p {
+    font-size: 20px;
+    margin-bottom: 4%;
+}
+.smestaj select {
+    height: 30px;
+    width: 80%;
+}
+
+.price {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.price span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+.price span:nth-child(1){
+    margin-bottom: 4px;
+}
+.price span .price-p {
+    margin-right: 10px;
+}
+.price span .checkbox {
+    margin-left: 8px;
+}
+.price span:nth-child(2) p {
+    color: white;
+}
+.select-bar button {
+    width: 21%;
+    height: 100%;
+    cursor: pointer;
+    background-color: rgba(238, 201, 104, 1);
+    color: rgba(21, 135, 99, 1);
+    border: none;
+    font-size: 25px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

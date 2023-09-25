@@ -1,7 +1,8 @@
 import React from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import Main from './components/Main'
+import Navbar from './components/FirstSection/Navbar'
+import Main from './components/FirstSection/FirstSection'
+import SecondSection from './components/SecondSection/SecondSection'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <div className='app'>
     <Navbar />
     <Main />
+    <SecondSection />
     </div>
   )
 }

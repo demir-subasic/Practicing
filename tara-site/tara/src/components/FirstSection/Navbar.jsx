@@ -4,7 +4,7 @@ import {BsTelephone} from 'react-icons/bs'
 import {AiOutlineInstagram} from 'react-icons/ai';
 import { AiOutlineFacebook } from 'react-icons/ai';
 import { AiOutlineYoutube } from 'react-icons/ai';
-import logo from '../assets/logo.png'
+import logo from '../../assets/logo.png'
 
 const Navbar = () => {
   return (

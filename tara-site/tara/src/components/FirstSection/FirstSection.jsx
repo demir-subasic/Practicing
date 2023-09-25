@@ -1,5 +1,6 @@
 import React from 'react'
 import './main.css'
+import SelectBar from './SelectBar'
 
 const Main = () => {
   return (
@@ -9,6 +10,7 @@ const Main = () => {
          <p>Prelepi vidikovci Tare, jezera Zaovine i Perućac, kanjon Drine i netaknuta priroda nacionalnog Parka Tara zovu Vas da provedete odmor upravo ovde.</p>
          <button>PONUDE</button>
         </div>
+        <SelectBar />
     </div>
   )
 }
