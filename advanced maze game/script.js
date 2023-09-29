@@ -264,12 +264,12 @@ const DrawMaze = (Maze, ctx, cellSize, endSprite = null) => {
             }
             for (let x = 0; x < gridSize; x++){
                 ctx.beginPath();
-                ctx.rect{
+                ctx.rect(
                     coord.x * cellSize + x * fraction + 4.5,
                     coord.y * cellSize + y * fraction + 4.5,
                     fraction,
                     fraction
-                };
+                );
                 if (colorSwap) {
                     ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
                 } else {
@@ -282,7 +282,277 @@ const DrawMaze = (Maze, ctx, cellSize, endSprite = null) => {
     }
 
     const drawEndSprite = () => {
-        
+        var offsetLeft = cellSize / 50;
+        var offsetRight = cellSize / 25;
+        var coord = Maze.endCoord();
+        ctx.drawImage(
+            endSprite,
+            2,
+            2,
+            endSprite.width,
+            endSprite.height,
+            coord.x * cellSize + offsetLeft,
+            coord.y * cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+        );
     }
 
+
+    const clear = () => {
+        var canvaSize = cellSize * map.length;
+        ctx.clearRect(0, 0, canvaSize, canvaSize)
+    }
+
+    if (endSprite != null) {
+        drawEndMethod = drawEndSprite;
+    } else {
+        drawEndMethod = drawEndFlag;
+    }
+    clear();
+    drawMap();
+    drawEndMethod();
 }
+  
+    const Player = (maze, c, _cellsize, onComplete, sprite = null) => {
+      var ctx = c.getContext("2d");
+      var drawSprite;
+      var moves = 0;
+      drawSprite = drawSpriteCircle;
+      if (sprite != null) {
+        drawSprite = drawSpriteImg;
+      }
+      var player = this;
+      var map = maze.map();
+      var cellCoords = {
+        x: maze.startCoord().x,
+        y: maze.startCoord().y
+      };
+      var  cellSize = _cellsize;
+      var  halfCellSize = cellSize / 2;
+
+
+      this.redrawPlayer = function(_cellsize){
+        cellSize = _cellsize;
+        drawSpriteImg(cellCoords);
+      };
+
+      const drawSpriteCircle = (coord) => {
+        ctx.beginPath();
+        ctx.fillStyle = "yellow";
+        ctx.arc(
+            (coord.x + 1) * cellSize - halfCellSize,
+            (coord.y + 1) * cellSize - halfCellSize,
+            halfCellSize - 2,
+            0,
+            2 * Math.PI
+        );
+        ctx.fill();
+        if (coord.x === maze.endCoord().x && coord.y === maze.endCoord().y) {
+            onComplete(moves);
+            player.unbindKeyDown();
+        }
+      }
+      
+      function drawSpriteImg(coord) {
+        var offsetLeft = cellSize / 50;
+        var offsetRight = cellSize / 25;
+        ctx.drawImage(
+            sprite,
+            0,
+            0,
+            sprite.width,
+            sprite.height,
+            coord.x * cellSize + offsetLeft,
+            coord.y + cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+        );
+        if (coord.x === maze.endCoord().x && coord.y === maze.endCoord().y) {
+            onComplete(moves);
+            player.unbindKeyDown();;
+        }
+      }
+
+
+      function removeSprite(coord) {
+           var offsetLeft = cellSize / 50;
+           var offsetRight = cellSize / 25;
+           ctx.clearRect(
+            coord.x * cellSize + offsetLeft,
+            coord.y * cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+           );
+        };
+
+        const check = (e) => {
+         var cell = map[cellCoords.x][cellCoords.y];
+         moves++;
+         switch(e.keyCode) {
+            case 65:
+            case 37: 
+            if(cell.w == true) {
+                removeSprite(cellCoords);
+                cellCoords = {
+                    x: cellCoords.x - 1,
+                    y: cellCoords.y
+                };
+                drawSprite(cellCoords);
+            }
+            break;
+            case 87:
+            case 38: 
+            if (cell.n == true) {
+                removeSprite(cellCoords);
+                cellCoords = {
+                    x: cellCoords.x,
+                    y: cellCoords.y - 1
+                };
+                drawSprite(cellCoords);
+            }
+            break;
+            case 68:
+            case 39: 
+            if (cell.e == true) {
+             removeSprite(cellCoords);
+             cellCoords = {
+                x: cellCoords.x + 1,
+                y: cellCoords.y
+             };
+             drawSprite(cellCoords);
+            };
+            break;
+            case 83:
+            case 40:
+                if(cell.s == true) {
+                    removeSprite(cellCoords);
+                    cellCoords = {
+                        x: cellCoords.x,
+                        y: cellCoords.y + 1
+                    };
+                    drawSprite(cellCoords)
+                }
+                break;
+         }
+        }
+
+        this.bindKeyDown = function() {
+            window.addEventListener("keydown", check, false);
+
+            $("#view").swipe({
+                swipe: function(
+                    event,
+                    direction,
+                    distance,
+                    duration,
+                    fingerCount,
+                    fingerData
+                ) {
+                    console.log(direction);
+                    switch (direction) {
+                        case "up":
+                            check({
+                                keyCode: 38
+                            });
+                        break;
+                        case "down":
+                            check({
+                                keyCode: 40
+                            });
+                        break;
+                        case "left":
+                            check({
+                                keyCode: 37
+                            });
+                        break;
+                        case "right":
+                            check({
+                                keyCode: 39
+                            });
+                        break;
+                    }
+                },
+                threshold: 0
+            });
+        };
+
+        this.unbindKeyDown = function() {
+            window.removeEventListener("keydown", check, false);
+            $("#view").swipe("destroy")
+        };
+
+        drawSprite(maze.startCoord());
+
+        this.bindKeyDown
+    }
+
+    var mazeCanvas = document.getElementById("mazeCanvas");
+    var ctx = mazeCanvas.getContext("2d");
+    var sprite;
+    var finishSprite;
+    var maze, draw, player;
+    var cellSize;
+    var difficulty;
+
+
+    window.onload = function() {
+        let viewWidth = $("#view").width();
+        let viewHeight = $("#view").height();
+        if (viewHeight < viewWidth) {
+            ctx.canvas.width = viewHeight - viewHeight / 100;
+            ctx.canvas.height = viewHeight - viewHeight /100;
+        } else {
+            ctx.canvas.width = viewWidth - viewWidth / 100;
+            ctx.canvas.height = viewWidth - viewWidth / 100;
+        }
+
+
+        var completeOne = false;
+        var completeTwo = false;
+        var isComplete = () => {
+            if(completeOne === true && completeTwo === true){
+                console.log("Runs");
+                setTimeout(function(){
+                    makeMaze();
+                }, 500);
+            }
+        };
+        sprite = newImage();
+        sprite.src = 
+        "./key.jpg" + 
+        "?" +
+        new Date().getTime();
+        sprite.setAttribute("crossOrigin", " ");
+        sprite.onload = function() {
+            sprite = changeBrightness(1.2, sprite);
+            completeOne = true;;
+            console.log(completeOne);
+            isComplete();
+        };
+
+        finishSprite = newImage.src = "./home.png"+
+        "?"+
+        new Date().getTime();
+        finishSprite.setAttribute("crossOrigin", " ");
+        finishSprite.onload = function() {
+            finishSprite = changeBrightness(1.1. finishSprite);
+            completeTwo = true;
+            console.log(completeTwo);
+            isComplete();
+        };
+    };
+
+    window.onresize = function() {
+        let viewWidth = $("#view").width();
+        let viewHeight = $("#view").height();
+        if(viewHeight < viewWidth) {
+            ctx.canvas.width = viewHeight - viewHeight / 100;
+            ctx.canvas.height = viewHeight- viewHeight / 100;
+        } else {
+            ctx.canvas.width = viewWidth - viewWidth / 100;
+            ctx.canvas.height = viewWidth - viewWidth / 100;
+        }
+
+        cellSize - mazeCanvas.width / difficulty;
+    }
