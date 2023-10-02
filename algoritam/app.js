@@ -48,3 +48,64 @@ function truncateString(str, num) {
 }
 
 console.log(truncateString("This-is-some text about programming", 8))
+
+
+
+// 5--- Check if the given word is a polynomial, if so then return true, otherwise return false
+
+function isPalindrome(e) {
+    let cleanedWord = e.toLowerCase().replace(/\s/g, "");
+    let reverseWord = cleanedWord.split('').reverse().join('');
+    return cleanedWord === reverseWord;
+}
+console.log(isPalindrome('oko'));
+console.log(isPalindrome('program'));
+
+
+
+// 6--- Go through the array and check if it has an element that is divisible by 2 then return it, if there is no such element in that array then return undefined.
+
+function findElement(arr, func) {
+    let num = [];
+    for (let i = 0; i < arr.length; i++){
+      num = arr[i]
+      if (func(num)){
+        return num;
+      }
+    }
+    return undefined;
+  }
+  
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+
+
+// 7--- Check if a value is classified as a boolean primitive. Return true or false. Boolean primitives are true and false.
+
+function booWho(bool) {
+    if (bool === true || bool === false){
+      return true;
+    }
+    return false;
+}
+  
+console.log(booWho(null));
+
+
+
+// 8--- Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+function titleCase(str) {
+    const lower = str.split(" ");
+    const newArr = [];
+    for (let word in lower) {
+      newArr[word] = lower[word][0].toUpperCase() + lower[word].slice(1).toLowerCase();
+    }
+    return newArr.join(" ");
+  }
+  
+console.log(titleCase("I'm a little tea pot"));
+
+
+
+
