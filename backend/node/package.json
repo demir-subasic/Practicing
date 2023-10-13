@@ -4,7 +4,7 @@
   "description": "",
   "main": "alternativeFlavor.js",
   "scripts": {
-    "start": "nodemon setTimeout.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
