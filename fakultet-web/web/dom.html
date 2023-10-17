@@ -6,12 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p>OVO JE NEKI TEKST</p>
-    <button type="button" onclick="document.querySelector('p').style.color='red '">
-    Promeni boju teksta</button>
-
+    <div id="i1">Neki tekst</div>
     <script>
-        document.querySelector('p').style.color='blue';
+        var obj = document.querySelector('#i1')
+        alert(obj.innerHTML)
     </script>
 </body>
 </html>

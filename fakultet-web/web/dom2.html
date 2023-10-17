@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Unesi broj</p>
+    <input type="text" id="t1" /><input type="text" id="t2">
+    <input type="button" onclick="javascipt:highlightMax()" value="odredi max">
+
+    <script>
+        const highlightMax = () => {
+            var o1 = document.querySelector('#t1');
+            var o2 = document.querySelector('#t2');
+
+            o1.style.backgroundColor = "FFFFFF"
+            o2.style.backgroundColor = "FFFFFF"
+
+            var broj1 = parseInt(o1.value)
+            var broj2 = parseInt(o2.value)
+
+            if(broj1 > broj2) o1.style.backgroundColor = "#ff00dd";
+            else o2.style.backgroundColor = "#ff00dd"
+        }
+    </script>
+
+
+</body>
+</html>
