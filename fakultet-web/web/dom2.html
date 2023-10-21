@@ -12,14 +12,14 @@
 
     <script>
         const highlightMax = () => {
-            var o1 = document.querySelector('#t1');
-            var o2 = document.querySelector('#t2');
+            let o1 = document.querySelector('#t1');
+            let o2 = document.querySelector('#t2');
 
             o1.style.backgroundColor = "FFFFFF"
             o2.style.backgroundColor = "FFFFFF"
 
-            var broj1 = parseInt(o1.value)
-            var broj2 = parseInt(o2.value)
+            let broj1 = parseInt(o1.value)
+            let broj2 = parseInt(o2.value)
 
             if(broj1 > broj2) o1.style.backgroundColor = "#ff00dd";
             else o2.style.backgroundColor = "#ff00dd"
