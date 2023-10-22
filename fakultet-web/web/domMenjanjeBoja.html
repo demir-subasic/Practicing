@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modernizovan primer koda sa JavaScript-om i DOM-om</title>
+</head>
+<body>
+    <button id="promeniBoju">Promeni boju</button>
+    <div id="elementZaPromenuBoje">
+        Ovo je element koji će promeniti boju.
+    </div>
+
+    <script>
+        const dugme = document.getElementById("promeniBoju");
+        const elementZaPromenuBoje = document.getElementById("elementZaPromenuBoje");
+
+        const generisiSlucajnuBoju = () => {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        };
+
+        const promeniBojuPozadine = () => {
+            const novaBoja = generisiSlucajnuBoju();
+            elementZaPromenuBoje.style.backgroundColor = novaBoja;
+        };
+
+        dugme.addEventListener("click", promeniBojuPozadine);
+    </script>
+</body>
+</html>
