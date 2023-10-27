@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista sa DOM-om i Eventima</title>
+</head>
+<body>
+    <h1>Lista stavki</h1>
+    <ul id="lista">
+    </ul>
+    <input type="text" id="novaStavka" placeholder="Unesite novu stavku">
+    <button id="dodajStavku">Dodaj</button>
+
+    <script>
+        var lista = document.getElementById("lista");
+        var novaStavkaInput = document.getElementById("novaStavka");
+        var dodajStavkuDugme = document.getElementById("dodajStavku");
+
+        dodajStavkuDugme.addEventListener("click", function() {
+            var novaStavka = novaStavkaInput.value;
+            if (novaStavka !== "") {
+                var stavkaElement = document.createElement("li");
+                stavkaElement.textContent = novaStavka;
+                lista.appendChild(stavkaElement);
+                novaStavkaInput.value = "";
+            }
+        });
+
+        novaStavkaInput.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                dodajStavkuDugme.click();
+            }
+        });
+    </script>
+</body>
+</html>
