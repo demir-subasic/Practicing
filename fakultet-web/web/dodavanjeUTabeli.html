@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dodavanje elemenata u tabelu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    table {
+      width: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #333;
+    }
+
+    th, td {
+      padding: 8px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tabela sa elementima</h1>
+  <table id="mojaTabela">
+    <tr>
+      <th>Redni broj</th>
+      <th>Element</th>
+    </tr>
+  </table>
+
+  <input type="text" id="unosTeksta" placeholder="Unesite tekst">
+  <button onclick="dodajElement()">Dodaj element</button>
+
+  <script>
+    function dodajElement() {
+      var tabela = document.getElementById("mojaTabela");
+      var redniBroj = tabela.rows.length;
+      var unosTeksta = document.getElementById("unosTeksta").value;
+      var red = tabela.insertRow(-1);
+      var celija1 = red.insertCell(0);
+      var celija2 = red.insertCell(1);
+      celija1.innerHTML = redniBroj;
+      celija2.innerHTML = unosTeksta;
+      document.getElementById("unosTeksta").value = "";
+    }
+  </script>
+</body>
+</html>
