@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .student-card {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 10px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .student-img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <title>Student Card</title>
+</head>
+<body>
+
+  <div id="studentContainer"></div>
+
+  <script>
+    function Student(indeks, ime, prezime, godina, smer, slika) {
+      this.indeks = indeks;
+      this.ime = ime;
+      this.prezime = prezime;
+      this.godina = godina;
+      this.smer = smer;
+      this.slika = slika;
+
+      this.render = function (id) {
+        var parent = document.getElementById(id);
+        if (parent == null) throw new Error("Roditeljski element (ID=" + id + " ne postoji");
+
+        var el = document.createElement("div");
+        el.classList.add("student-card");
+
+        el.innerHTML = `
+          <img class='student-img' src='${this.slika}' alt='nema'>
+          <div>
+            <div>${this.ime} ${this.prezime}</div>
+            <div>Broj indeksa: ${this.indeks}</div>
+            <div>Godina: ${this.godina}</div>
+            <div>Smer: ${this.smer}</div>
+          </div>
+        `;
+
+        parent.appendChild(el);
+      }
+    }
+
+    var student1 = new Student("123456", "Marko", "Marković", "2", "Računarske nauke", "https://blog.hootsuite.com/wp-content/uploads/2020/02/Image-copyright.png");
+    student1.render("studentContainer");
+  </script>
+
+</body>
+</html>
