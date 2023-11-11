@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .book-card {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 10px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .book-cover {
+      max-width: 100%;
+      height: auto;
+    }
+    #bookContainer {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+  </style>
+  <title>Book Card</title>
+</head>
+<body>
+
+  <div id="bookContainer"></div>
+
+  <script>
+    function Book(title, author, genre, coverImage) {
+      this.title = title;
+      this.author = author;
+      this.genre = genre;
+      this.coverImage = coverImage;
+
+      this.render = function (id) {
+        var parent = document.getElementById(id);
+        if (parent == null) throw new Error("Roditeljski element (ID=" + id + " ne postoji");
+
+        var el = document.createElement("div");
+        el.classList.add("book-card");
+
+        el.innerHTML = `
+          <img class='book-cover' src='${this.coverImage}' alt='No Cover'>
+          <div>
+            <div>Title: ${this.title}</div>
+            <div>Author: ${this.author}</div>
+            <div>Genre: ${this.genre}</div>
+          </div>
+        `;
+
+        parent.appendChild(el);
+      }
+    }
+
+    var book1 = new Book("The Catcher in the Rye", "J.D. Salinger", "Fiction", "https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL.jpg");
+    book1.render("bookContainer");
+
+    var book2 = new Book("To Kill a Mockingbird", "Harper Lee", "Classics", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1470082995i/29056083.jpg");
+    book2.render("bookContainer");
+
+    var book3 = new Book("1984", "George Orwell", "Dystopian", "https://orion-uploads.openroadmedia.com/sm_f7e651-tolkien-lordoftherings.jpg");
+    book3.render("bookContainer");
+  </script>
+
+</body>
+</html>
