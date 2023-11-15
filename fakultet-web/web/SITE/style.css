@@ -33,6 +33,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+.logo a i{
+  color: #00aceb;
+  background-color: white;
+  border-radius: 40%;
+  padding: 10px 11px;
+}
 
 .navbar a {
   text-decoration: none;
@@ -193,7 +199,7 @@ h3 {
 }
 
 .grid {
-  margin-top: 0;
+  margin: 7vh 0;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -240,4 +246,8 @@ h3 {
   .about-image img {
     height: auto;
     border-radius: 8px;
+  }
+
+  footer {
+    background-color: #00aceb;
   }
