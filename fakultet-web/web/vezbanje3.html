@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .ww{
+        border: 1px solid black;
+        width: 50vw;
+        height: 50vh;
+    }
+    .kartica-red {
+        background-color: burlywood;
+        border: 2px dotted blue;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="radovi"></div>
+    <script>
+        function vozilo(marka, model, godiste){
+            this.marka = marka;
+            this.model = model;
+            this.godiste = godiste;
+
+            this.render = function(id) {
+                var parent = document.getElementById(id);
+                
+                var element = document.createElement("div")
+                element.classList.add("kartica");
+
+                element.innerHTML = `
+                <div class = "ww">
+                    <div class = "kartica-red">${this.marka}</div>
+                    <div class = "kartica-red">${this.model}</div>
+                    <div class = "kartica-red">${this.godiste}</div>
+                </div>
+                `
+                parent.appendChild(element);
+            }
+        }
+        var vozilo1 = new vozilo("vw", "passat", "2001");
+        vozilo1.render("radovi")
+    </script>
+</body>
+</html>

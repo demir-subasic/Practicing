@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="radniDeo"></div>
+    <script>
+        function osoba(ime, prezime, godine, visina){
+            this.ime = ime;
+            this.prezime = prezime;
+            this.godine = godine;
+            this.visina = visina;
+
+            this.render = function(id) {
+                var parent = document.getElementById(id);
+
+                var el = document.createElement("div")
+                el.classList.add("kartica");
+
+                el.innerHTML = `
+                <div>
+                    <div>${this.ime}</div>
+                    <div>${this.prezime}</div>
+                    <div>${this.godine}</div>
+                    <div>${this.visine}</div>
+                </div>
+                `
+
+                parent.appendChild(el)
+            }
+        }
+        var osoba1 = new osoba("demir", "subasic", 22, 186);
+            osoba1.render("radniDeo")
+    </script>
+</body>
+</html>

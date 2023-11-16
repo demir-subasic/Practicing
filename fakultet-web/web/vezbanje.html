@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="radnaPovrsina"></div>
+    <script>
+        function Primer(naslov, autor, zanr, slika){
+        this.naslov = naslov;
+        this.autor = autor;
+        this.zanr = zanr;
+        this.slika = slika;
+
+        this.render = function (id) {
+          var parent = document.getElementById(id)
+
+          var el = document.createElement("div")
+          el.classList.add("kartica")
+
+          el.innerHTML = `
+          <img class = "slika" src='${this.image}' alt="slika">
+          <div>
+            <div>naslov ${this.naslov}</div>
+            <div>autor ${this.autor}</div>
+            <div>zanr ${this.zanr}</div>
+          </div>
+          `;
+
+          parent.appendChild(el)
+        }
+    }
+
+        var knjiga1 = new Primer("naslov-1", "demir", "triler", "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg")
+        knjiga1.render("radnaPovrsina")
+
+    </script>
+</body>
+</html>
