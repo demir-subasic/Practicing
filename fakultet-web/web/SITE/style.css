@@ -249,5 +249,36 @@ h3 {
   }
 
   footer {
-    background-color: #00aceb;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
   }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logoFooter{
+    margin-bottom: 20px;
+  }
+  .logoFooter img {
+    width: 100px;
+  }
+  
+  .links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .links li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .copyright {
+    text-align: center;
+  }
+  
