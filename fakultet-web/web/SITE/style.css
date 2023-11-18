@@ -4,16 +4,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   overflow-x: hidden;
 }
 
-.image {
+#hero {
   width: 100vw;
   height: 100vh;
-  background-image: url("https://www.techquintal.com/wp-content/uploads/2021/05/Information-Technology.jpg");
+  background-image: url("https://imgeng.jagran.com/images/2022/nov/Best%20Cameras%20For%20Photography1669186135779.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -22,8 +22,8 @@ body {
   display: flex;
   width: 100%;
   height: 10vh;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.799);
-  backdrop-filter: blur(1px);
+  border-bottom: 3px solid #00384c;
+  backdrop-filter: blur(50px);
 }
 
 .logo {
@@ -33,22 +33,24 @@ body {
   justify-content: center;
   align-items: center;
 }
-.logo a i{
-  color: #00aceb;
-  background-color: white;
-  border-radius: 40%;
-  padding: 10px 11px;
+.logo i {
+  color: #00384c;
+  background-color: rgba(255, 255, 255, 0.333);
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease;
 }
-
+.logo i:hover {
+  background-color: white;
+}
 .navbar a {
   text-decoration: none;
   position: relative;
   text-decoration: none;
-  color: #ffffffc0;
+  color: #00384c;
   font-size: 15px;
 }
 .navbar a:hover {
-  color: white;
   transition: 0.5s;
 }
 .navbar a::before {
@@ -123,7 +125,7 @@ body {
   transform: rotateY(180deg);
 }
 
-.center-content {
+#services {
   width: 85%;
   height: 100vh;
   display: flex;
@@ -198,8 +200,8 @@ h3 {
   background: transparent;
 }
 
-.grid {
-  margin: 7vh 0;
+#gallery {
+  margin: 4vh 0;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -207,20 +209,20 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(500px, 500px));
 }
 
-.grid img {
+#gallery img {
   width: 500px;
   height: 500px;
   object-fit: cover;
   object-position: center;
 }
 
-.about-us {
+#about-us {
   height: 100vh;
   width: 100vw;
   padding: 40px 50px 50px 50px;
   display: flex;
   align-items: center;
-  background-color: cadetblue;
+  background-color: rgba(95, 158, 160, 0.059);
 }
   
 .about-content {
@@ -248,37 +250,77 @@ h3 {
     border-radius: 8px;
   }
 
-  footer {
-    background-color: #000;
+  #footer {
+    background-color: #00031be6;
     color: #fff;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-top: 30px;
   }
   
   .container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .logoFooter{
-    margin-bottom: 20px;
-  }
-  .logoFooter img {
-    width: 100px;
-  }
-  
-  .links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .links li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  .copyright {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .container h1 {
+      font-size: 40px;
+      letter-spacing: 0.6px;
+      margin-bottom: 5px;
+  }
+  .container span {
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.678);
+    letter-spacing: 0.3px;
+  }
+  .search-bar {
+    background-color: white;
+
+    width: 40%;
+    border-radius: 30px;
+    padding: 0 10px 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search-bar input {
+    border: none;
+    border-radius: 30px;
+    font-size: 17px;
+  }
+  .search-bar input:focus {
+   outline: none;
+   font-size: 17px;
+  }
+
+  .search-bar button {
+    margin: 5px 0;
+   padding: 14px 33px;
+   border-radius: 30px;
+   background-color: green;
+   border: none;
+   font-size: 20px;
+   color: white;
+   cursor: pointer;
+  }
+  .footerText {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .designedBy span {
+    color: #00aceb;
+   font-family: fantasy;
+   letter-spacing: 5px;
+   font-size: 20px;
   }
   

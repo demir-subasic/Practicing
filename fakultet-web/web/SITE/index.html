@@ -16,12 +16,11 @@
         <a href="www.google.com" target="_blank"><i class="fa-solid fa-user"></i></a>
       </div>
       <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Portfolios</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
+        <a href="#" onclick="scrollToDiv('hero')">Home</a>
+        <a href="#" onclick="scrollToDiv('services')">Services</a>
+        <a href="#" onclick="scrollToDiv('about-us')">About Us</a>
+        <a href="#" onclick="scrollToDiv('footer')">Contact me</a>
+        <a href="#" onclick="scrollToDiv('gallery')">Gallery</a>
       </nav>
       <div class="icons">
         <a href="#"><i class="fa-brands facebook fa-facebook-f"></i></a>
@@ -30,10 +29,10 @@
         <a href="#"><i class="fa-brands youtube fa-youtube"></i></a>
       </div>
     </header>
-    <div class="image"></div>
+    <div id="hero"></div>
 
     <!-- section twoo -->
-    <div class="center-content">
+    <div id="services">
       <div class="square one">
         <h2>I Click Moment, that you love</h2>
         <p>
@@ -57,7 +56,7 @@
     </div>
 
     <!-- About Us Section -->
-    <div class="about-us">
+    <div id="about-us">
       <div class="about-content">
         <h2>About Us</h2>
         <p>
@@ -70,7 +69,7 @@
     </div>
 
     <!-- section three -->
-    <div class="grid">
+    <div id="gallery">
       <img
         src="https://plus.unsplash.com/premium_photo-1675827055694-010aef2cf08f?auto=format&fit=crop&q=80&w=1912&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
@@ -97,23 +96,21 @@
       />
     </div>
 
-    <footer>
+    <div id="footer">
       <div class="container">
-        <div class="logoFooter">
-          <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="Logo">
-        </div>
-        <div class="links">
-          <ul>
-            <li><a href="#">Weebly Themes</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Showcase</a></li>
-            <li><a href="#">About Us</a></li>
-          </ul>
-        </div>
-        <div class="copyright">
-          ©Copyright. All rights reserved.
-        </div>
+        <h1>Let's connect!</h1>
+        <span>Memories through the lens. Let's connect through a shared vision.</span>
+       <div class="search-bar">
+        <input type="text" placeholder="type your e-mail here ...">
+        <button>Join</button>
+       </div>
       </div>
-    </footer>
+      <div class="footerText">
+        <span class="copyright">©Copyright. All rights reserved.</span>
+        <div class="designedBy">Designed by <span>DEMIR</span></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
