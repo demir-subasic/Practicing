@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="obrada.php" method="GET">
+        <h1 style="margin-bottom: 30px;">OVO JE NEKA FORMA</h1>
+        <div>
+        Name: <input type="text" name="name">
+        Adress: <input type="text" name="adress">
+        </div>
+        <div>
+            City: <input type="text" name="city">
+            State: <input type="text" name="state">
+            Zip code: <input type="text" name="zip_code">
+            Customer Code: <input type="text" name="c_code">
+        </div>
+        <select name="type">
+            <option value="1">Mahagoni</option>
+            <option value="2">Paris</option>
+            <option value="3">London</option>
+        </select>
+        Size: <input type="radio" name="size" value="king">King
+        <input type="radio" name="size" value="queen">Queen
+        <input type="radio" name="size" value="single">Single
+
+        Extras: <input type="checkbox" name="extras[]" value="drawers">Drawers
+        <input type="checkbox" name="extras[]" value="casters">Casters
+        <input type="checkbox" name="extras[]" value="football">Football
+        <input type="checkbox" name="extras[]" value="mouse">Mouse
+        
+
+        Comment: <textarea name="comment" size="4"></textarea>
+        Submit: <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+</html>
+
+
+
+<!-- THIS IS PHP -->
+
+
+<!-- <?php
+echo "Povezano!" . $_GET["name"];
+echo $_GET["address"]."<br>";
+echo $_GET["city"]."<br>";
+echo $_GET["state"]."<br>";
+echo $_GET["zip_code"]."<br>";
+echo $_GET["c_code"]."<br>";
+echo $_GET["type"]."<br>";
+echo $_GET["size"]."<br>";
+echo $_GET["extras"][0]."<br>";
+echo $_GET["extras"][1]."<br>";
+echo $_GET["extras"][2]."<br>";
+echo $_GET["extras"][3]."<br>";
+echo $_GET["comment"]."<br>";
+?> -->

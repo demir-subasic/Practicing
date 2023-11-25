@@ -90,9 +90,10 @@ body {
   text-decoration: none;
   position: relative;
   text-decoration: none;
-  color: #00384c;
-  font-size: 15px;
+  color: #0283b1;
+  font-size: 16px;
   font-weight: 500;
+  letter-spacing: 0.3px;
 }
 .navbar a:hover {
   transition: 0.5s;
@@ -103,7 +104,7 @@ body {
   width: 100%;
   height: 2px;
   bottom: 0;
-  background-color: #ffffff;
+ background-color: #00384c;
   transform: scaleX(0);
   transform-origin: 50% 50%;
   transition: transform 0.4s ease;
@@ -153,11 +154,11 @@ body {
   transform: rotateY(180deg);
 }
 
-.twitter {
+.fa-x-twitter {
   transition: 0.5s;
 }
 
-.twitter:hover {
+.fa-x-twitter:hover {
   transform: rotateY(180deg);
 }
 
@@ -347,7 +348,7 @@ h3 {
     margin: 5px 0;
    padding: 14px 33px;
    border-radius: 30px;
-   background-color: green;
+   background-color: #00aceb;
    border: none;
    font-size: 20px;
    color: white;
