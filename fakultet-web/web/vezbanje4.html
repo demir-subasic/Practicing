@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proizvodi</title>
+</head>
+<style>
+    .product-card {
+        border: 1px solid black;
+        width: 22vw;
+        margin: 10px;
+        padding: 10px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .product-info {
+        background-color: #c0c0c0;
+        border: 2px solid #333;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .product-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+    }
+</style>
+<body>
+    <div id="products"></div>
+
+    <script>
+        function Product(name, price, category, imageUrl) {
+            this.name = name;
+            this.price = price;
+            this.category = category;
+            this.imageUrl = imageUrl;
+
+            this.render = function (id) {
+                var parent = document.getElementById(id);
+
+                var element = document.createElement("div");
+                element.classList.add("product-card");
+
+                element.innerHTML = `
+                    <div class="product-info">${this.name}</div>
+                    <div class="product-info">${this.price} USD</div>
+                    <div class="product-info">${this.category}</div>
+                    <img src="${this.imageUrl}" alt="${this.name}" class="product-image">
+                `;
+
+                parent.appendChild(element);
+            }
+        }
+
+        var product1 = new Product("Laptop", 1200, "Electronics", "https://via.placeholder.com/150");
+        var product2 = new Product("Headphones", 80, "Audio", "https://via.placeholder.com/150");
+        var product3 = new Product("Backpack", 40, "Fashion", "https://via.placeholder.com/150");
+        var product4 = new Product("Smartphone", 600, "Electronics", "https://via.placeholder.com/150");
+
+        product1.render("products");
+        product2.render("products");
+        product3.render("products");
+        product4.render("products");
+    </script>
+</body>
+</html>
