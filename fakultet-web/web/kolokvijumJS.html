@@ -5,7 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<style>
+    #radna-povrsina {
+        height: 50vh;
+        width: auto;
+        border: 1px solid black;
+        background-color: aqua;
+    }
+    .box {
+        display: flex;
+    }
+    .left-side {
+        border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+    }
+    .slika {
+        width: 100px;
+        height: 200px;
+    }
+    .slika-zastave{
+        border-radius: 20px;
+       width: 100%;
+       height: 100%;
+    }
+    .kolona {
+        border: 1px solid black;
+    }
+    .gradpovrsina {
+        display: flex;
+        flex-direction: column;
+    }
     
+</style>
+<body>
+    <div id="radna-povrsina"></div>
+
+    <script>
+        function Drzava(ime, glavnigrad, povrsina, brojstanovnika, grad1povrsina, grad2povrsina, grad3povrsina, slika) {
+            this.ime = ime;
+            this.glavnigrad = glavnigrad;
+            this.povrsina = povrsina;
+            this.brojstanovnika = brojstanovnika;
+            this.grad1povrsina = grad1povrsina; 
+            this.grad2povrsina = grad2povrsina;
+            this.grad3povrsina = grad3povrsina;
+            this.slika = slika;
+
+            this.render = function(id) {
+                var parent = document.getElementById(id)
+
+                var el = document.createElement("div");
+                el.classList.add("kartica");
+
+                el.innerHTML = `
+                <div class = "box">
+                    <div class = "left-side">
+                <div class = "ime kolona">Ime Drzave: ${this.ime}</div>
+                <div class = "glavnigrad kolona"> Glavni Grad: ${this.glavnigrad}</div>
+                <div class = "povrsina kolona"> Povrsina : ${this.povrsina}</div>
+                <div class = "brojstanovnika kolona">Broj stanovnika: ${this.brojstanovnika}</div>
+                <div class = "gradpovrsina ">
+                    <span>Grad 1:${this.grad1povrsina}</span>
+                    <span>Grad 2: ${this.grad2povrsina}</span>
+                    <span>Grad 3: ${this.grad3povrsina}</span>
+                </div>
+                </div>
+                <div class = "slika">Slika zastave : 
+                    <img src="${this.slika}" alt="${this.name}" class = "slika-zastave">
+                </div> 
+            </div>
+                `
+                parent.appendChild(el)
+            }
+        }
+        var objekat = new Drzava("srbija", "beograd", "11000m2", "8miliona", "100hiljada", "200hiljada", "300hiljada", "https://www.recordnet.com/gcdn/presto/2021/03/22/NRCD/9d9dd9e4-e84a-402e-ba8f-daa659e6e6c5-PhotoWord_003.JPG?width=660&height=425&fit=crop&format=pjpg&auto=webp");
+
+        objekat.render("radna-povrsina")
+    </script>
 </body>
 </html>
