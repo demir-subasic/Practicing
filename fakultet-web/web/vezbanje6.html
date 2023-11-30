@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #radna-povrsina {
+        background-color: red;
+        height: 30vh;
+        display: flex;
+        justify-content: space-between;
+    }
+    .kartica  {
+        display: flex;
+        width: 100%;
+        height: 70%;
+    }
+    .kolona {
+        border: 1px solid black;
+        background-color: burlywood;
+        width: 25%;
+    }
+</style>
+<body>
+    <div id="radna-povrsina"></div>
+
+    <script>
+        function Rad (mis, laptop, monitor, kuciste) {
+            this.mis = mis;
+            this.laptop = laptop;
+            this.monitor = monitor;
+            this.kuciste = kuciste;
+
+            this.render = function (id){
+                var parent = document.getElementById(id)
+
+                var element = document.createElement("div");
+                element.classList.add("kartica");
+
+                element.innerHTML = `
+                <div class = "kolona">MIS - ${this.mis}</div>
+                <div class = "kolona">LAPTOP - ${this.laptop}</div>
+                <div class = "kolona">MONITOR - ${this.monitor}</div>
+                <div class = "kolona">KUCISTE - ${this.kuciste}</div>
+                `
+
+                parent.appendChild(element)
+            }
+        }
+        var rad1 = new Rad("x7", "redmibook","asus", "lenovo")
+        rad1.render("radna-povrsina")
+    </script>
+</body>
+</html>

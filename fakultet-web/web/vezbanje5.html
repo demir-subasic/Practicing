@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="radna-povrsina"></div>
+
+
+    <script>
+        function Primer (ime, prezime, godine, visina) {
+            this.ime = ime;
+            this.prezime = prezime;
+            this.godine = godine;
+            this.visina = visina;
+
+            this.render = function (id) {
+                var parent = document.getElementById(id);
+
+                var element = document.createElement("div")
+                element.classList.add("kartica")
+
+                element.innerHTML = `
+                <div>${this.ime}</div>
+                <div>${this.prezime}</div>
+                <div>${this.godine}</div>
+                <div>${this.visina}</div>
+                `
+
+                parent.appendChild(element);
+            }
+        }
+        var primer1 = new Primer ("demir", "subasic", "18", "190");
+
+        primer1.render("radna-povrsina")
+    </script>
+</body>
+</html>
+
+
+
+//kreiraamo prazan div 
+// napravimo function Primer neki kojem cemo da dodamo neke stavke
+// this.stavke = stavke
+// this.render = function (id) {
+  var parent = document.getElementById
+  
+  var element = document.createElement("div")
+  element.classList.add("imeKlase")
+
+  element.innerHTML = ``
+
+  parent.appendChild(element)
+}
+
+var primer1 = new Primer (one stavke nabrajamo)
+
+primer1.render("ovde pisemo ona prazni div sa pocetka")
