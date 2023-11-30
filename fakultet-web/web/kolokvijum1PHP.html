@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="echo.php" method="GET">
+        <div class="firstBox">
+         <h1>Personal Data</h1>
+         <div class="firstRow">Last name: <input type="text" name="lastName"></div>
+
+         <div class="secondRow">
+            <div>First Name: <input type="text" name="firstName"></div>
+            <div>Middle Name : <input type="text" name="middleName"></div>
+         </div>
+
+         <div class="thirdRow">
+            Email : 
+            <input type="email" name="email">
+         </div>
+
+         <div class="fourthRow">
+            Resume : 
+            <textarea name="textarea" size="3" ></textarea>
+         </div>
+        </div>
+
+        <div class="secondBox">
+            <h1>Job</h1>
+            <div class="firstRow">
+             <div class="position">Position applied for: 
+                <select name="position">
+                 <option value="Administration">Administration</option>
+                 <option value="opcija2">opcija2</option>
+                 <option value="opcija3">opcija3</option>
+                </select>
+             </div>
+             <div class="hourly">
+                Hourly Wage ($) <input name="hourly" type="text" value="30.00">
+            </div>
+            </div>
+            <div class="secondRow">
+                <div class="date">
+                    Date you can start
+                    <div class="inputs">
+                    <input name="input1" type="number" value="2020">
+                    <input name="input2" type="number" value="06">
+                    <input name="input3" type="number" value="15">
+                    </div>
+                </div>
+                <div>Weekly Hours <input name="weekly" type="text" value="40"></div>
+            </div>
+        </div>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+</html>
+
+
+
+
+
+<!-- <?php 
+print "LAST NAME ! : " . $_GET["lastName"]."<br>";
+print $_GET["firstName"]."<br>";
+print $_GET["middleName"]."<br>";
+print $_GET["email"]."<br>";
+print $_GET["textarea"]."<br>";
+print $_GET["position"]."<br>";
+print $_GET["hourly"]."<br>";
+print $_GET["input1"]."<br>";
+print $_GET["input2"]."<br>";
+print $_GET["input3"]."<br>";
+print $_GET["weekly"]."<br>";
+?> -->
