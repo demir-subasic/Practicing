@@ -18,6 +18,7 @@ const SecondSection = () => {
         
         <div className="text-side">
           <h2>Apartman ANDRIC</h2>
+          <h3>Add new content here</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat</p>
           <button>Detaljnije</button>
         </div>
