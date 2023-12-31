@@ -1,0 +1,43 @@
+.impact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.kofiannanfoundation.org/app/uploads/2016/02/shutterstock_119443174_rendered.jpg');
+    background-size: cover;
+  }
+  
+  .impact-section {
+    background-color: #f0f0f09b;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .impact-section:hover {
+    transform: scale(1.02);
+  }
+  
+  .impact-section h3 {
+    color: #ffffff;
+  }
+  
+  .impact-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .impact-section li {
+    margin-bottom: 10px;
+  }
+  
+  .impact-section ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+  

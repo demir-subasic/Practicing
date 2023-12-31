@@ -1,23 +1,31 @@
 .contact-form {
+  height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://img.freepik.com/premium-photo/mother-nature-provides-cropped-portrait-attractive-young-female-farmer-carrying-crate-fresh-produce_590464-10644.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702857600&semt=ais');
+    background-size: cover;
+    background-position: center;
 }
 
 .contact-form h2 {
-    color: #81ac8f;
+    color: #fefefe;
     font-size: 30px;
+    text-decoration: none;
 }
 
 form {
     max-width: 600px;
+    padding: 20px;
     margin: 0 auto;
     text-align: center;
+    border-radius: 10px;
+    
   }
   
   label {
-    color: #385241;
+    color: #ffffff;
     display: block;
     text-align: center;
   }
@@ -27,6 +35,8 @@ form {
     margin-top: 10px;
     border-radius: 10px;
     border: 1px solid #023d23;
+    background-color: #202d2492;
+    backdrop-filter: blur(5px);
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
@@ -34,6 +44,7 @@ form {
   }
   input,textarea :focus {
     outline: none;
+    color: white;
   }
   
   button {

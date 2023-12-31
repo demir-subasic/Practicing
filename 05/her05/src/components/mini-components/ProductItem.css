@@ -1,0 +1,27 @@
+.product-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .product-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .product-item p {
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .product-item p:last-child {
+    margin-bottom: 0;
+  }
+  
