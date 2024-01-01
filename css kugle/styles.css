@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    perspective: 600px;
+}
+
+.sphere {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.sphere:hover {
+    transform: rotateX(180deg) rotateY(180deg);
+}
