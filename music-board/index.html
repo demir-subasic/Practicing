@@ -1,25 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muzička Ploča</title>
-    <link rel="stylesheet" href="style.css">
+<title>Sound Boxes</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <button class="sound-box" data-sound-url="https://www.youtube.com/embed/YiSQ_db-Dcw?si=W29ykeox_mk9jCBU">Box 1</button>
+    <button class="sound-box" data-sound-url="https://www.youtube.com/embed/FgbRWef_v4k?si=UAZYXnN0EiwDHsxm">Box 2</button>
+    <button class="sound-box" data-sound-url="https://www.youtube.com/embed/4AVDPYZ4E1A?si=CQSbvFU1hNBhw4gu">Box 3</button>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 
-<div class="music-board">
-    <div class="box" data-sound="sound1"></div>
-    <div class="box" data-sound="sound2"></div>
-    <div class="box" data-sound="sound3"></div>
-
-</div>
-
-<audio id="sound1" src="putanja_do_tvojeg_servera/zvuk1.mp3"></audio>
-<audio id="sound2" src="putanja_do_tvojeg_servera/zvuk2.mp3"></audio>
-<audio id="sound3" src="putanja_do_tvojeg_servera/zvuk3.mp3"></audio>
-
-
-<script src="script.js"></script>
 </body>
 </html>
